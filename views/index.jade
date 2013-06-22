@@ -1,5 +1,113 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    ui-slides
+        ui-slide.splash(vcenter="true", center="true")
+            img(src="http://placehold.it/383x92")
+
+        ui-slide(type="title")
+            hgroup
+                h1 RessDriven WebPonents
+                h2 Responsive Web Design + Server Side Component
+                p
+                    div Filipe Araujo
+                    div Senior Lead Consultant, Sungard
+                    div Gotham JS 2013
+
+        ui-slide.topics(backdrop="false", background="false", items="li", items-fx="fade")
+            article
+                ul
+                    li
+                        img(src="http://placehold.it/200x200")
+                        span Responsive Design
+                    li
+                        img(src="http://placehold.it/200x200")
+                        span RESS
+                    li
+                        img(src="http://placehold.it/200x200")
+                        span Web Components
+                    li
+                        img(src="http://placehold.it/200x200")
+                        span Now what?
+
+        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+            article
+                ul
+                    li.scale
+                        img(src="http://placehold.it/200x200")
+                        span Responsive Design
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span RESS
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Web Components
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Now what?
+
+        ui-slide
+            hgroup
+                h3 History of Responsive Design
+            article
+                | contents
+
+         ui-slide.topics(backdrop="false", background="false", items="li.scale")
+            article
+                ul
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Responsive Design
+                    li.scale
+                        img(src="http://placehold.it/200x200")
+                        span RESS
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Web Components
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Now what?
+
+        ui-slide
+            hgroup
+                h3 What is RESS
+            article
+                | contents
+
+        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+            article
+                ul
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Responsive Design
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span RESS
+                    li.scale
+                        img(src="http://placehold.it/200x200")
+                        span Web Components
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Now what?
+
+        ui-slide
+            hgroup
+                h3 Web Components
+            article
+                | contents
+
+        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+            article
+                ul
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Responsive Design
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span RESS
+                    li.faded
+                        img(src="http://placehold.it/200x200")
+                        span Web Components
+                    li.scale
+                        img(src="http://placehold.it/200x200")
+                        span Now what?
