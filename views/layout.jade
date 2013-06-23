@@ -5,14 +5,12 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold")
 
-    if !source
-        link(rel="import", href="http://devices.herokuapp.com/components/presentation/slides")
-        link(rel="import", href="http://devices.herokuapp.com/components/presentation/slide")
-        script(src="http://devices.herokuapp.com/javascripts/vendor/polymer-all/polymer/polymer.min.js")
-    else
-        link(rel="import", href="http://localhost:3000/components/presentation/slides")
-        link(rel="import", href="http://localhost:3000/components/presentation/slide")
-        script(src="http://localhost:3000/javascripts/vendor/polymer-all/polymer/polymer.min.js")
+
+    link(rel="import", href=componentsHost+"/components/presentation/slides")
+    link(rel="import", href=componentsHost+"/components/presentation/slide")
+    link(rel="import", href=componentsHost+"/components/presentation/code")
+    script(src=componentsHost+"/javascripts/vendor/polymer-all/polymer/polymer.min.js")
 
   body
     block content
+        div ${componentsHost}
