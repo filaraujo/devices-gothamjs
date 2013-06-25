@@ -8,7 +8,7 @@ block content
         ui-slide(type="title")
             hgroup
                 h1 RessDriven WebPonents
-                h2 Responsive Web Design + Server Side Component
+                h2 Responsive Web Design + Server Side Web Components
                 p
                     div Filipe Araujo
                     div Senior Lead Consultant, Sungard
@@ -46,11 +46,45 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
+        ui-slide(notes=".note")
+            hgroup
+                h3 What is Responsive Design
+            article
+                ul
+                    li media queries
+                    li flexible layouts
+                    li flexible media (images &amp; video)
+                    li scalable typography
+                    li
+                        content choreography
+                        span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
+                    li feature detection
+                        span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
+                    li feature omission
+                        span.note Lorem ipsum In quis pariatur Duis dolor enim nisi consequat laboris laboris veniam laborum eu tempor irure consequat minim officia deserunt qui enim ut sint adipisicing laboris adipisicing Ut labore in cillum velit pariatur ullamco labore elit elit elit veniam minim Ut ex ullamco qui eu aliquip dolore ex amet do enim sed magna consectetur fugiat qui in dolor et proident dolor in consequat nostrud fugiat dolore aute et occaecat magna minim incididunt magna non Duis aute quis elit Ut nostrud nisi in consectetur sit proident enim cupidatat do consequat consequat in pariatur officia ad adipisicing do nisi et ut sunt et incididunt dolor mollit incididunt incididunt ea minim sint commodo reprehenderit consequat labore magna Duis enim est ex nostrud Excepteur nostrud nisi ut commodo velit consectetur anim ea nulla veniam dolor nulla sunt non cupidatat id laboris pariatur esse tempor ut in.
+
+
         ui-slide
             hgroup
-                h3 History of Responsive Design
+                h3 Responsive Design is hard!
+            article
+                | endless device/browse matrix
+                |
+
+        ui-slide
+            hgroup
+                h3 What's New in Responsive Design
             article
                 | contents
+
+        ui-slide
+            hgroup
+                h3 Viewport percentage unit
+            article
+                p vw, vh, vmin, vmax
+                ul
+                    li units are based on vieport size
+                a(href="http://responsivility.aws.af.cm/?q=http://localhost:3001") demo
 
          ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article
