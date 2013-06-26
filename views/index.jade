@@ -9,10 +9,10 @@ block content
             hgroup
                 h1 RessDriven WebPonents
                 h2 Responsive Web Design + Server Side Web Components
-                p
-                    div Filipe Araujo
-                    div Senior Lead Consultant, Sungard
-                    div Gotham JS 2013
+                div
+                    p Filipe Araujo
+                    p Senior Lead Consultant, Sungard
+                    p Gotham JS 2013
 
         ui-slide.topics(backdrop="false", background="false", items="li", items-fx="fade")
             article
@@ -50,18 +50,17 @@ block content
             hgroup
                 h3 What is Responsive Design
             article
+                span.note mention ethan marcot - spelling?
                 ul
                     li media queries
                     li flexible layouts
                     li flexible media (images &amp; video)
                     li scalable typography
                     li
-                        content choreography
+                        | content choreography
                         span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
                     li feature detection
-                        span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
                     li feature omission
-                        span.note Lorem ipsum In quis pariatur Duis dolor enim nisi consequat laboris laboris veniam laborum eu tempor irure consequat minim officia deserunt qui enim ut sint adipisicing laboris adipisicing Ut labore in cillum velit pariatur ullamco labore elit elit elit veniam minim Ut ex ullamco qui eu aliquip dolore ex amet do enim sed magna consectetur fugiat qui in dolor et proident dolor in consequat nostrud fugiat dolore aute et occaecat magna minim incididunt magna non Duis aute quis elit Ut nostrud nisi in consectetur sit proident enim cupidatat do consequat consequat in pariatur officia ad adipisicing do nisi et ut sunt et incididunt dolor mollit incididunt incididunt ea minim sint commodo reprehenderit consequat labore magna Duis enim est ex nostrud Excepteur nostrud nisi ut commodo velit consectetur anim ea nulla veniam dolor nulla sunt non cupidatat id laboris pariatur esse tempor ut in.
 
 
         ui-slide
@@ -69,7 +68,7 @@ block content
                 h3 Responsive Design is hard!
             article
                 | endless device/browse matrix
-                |
+                | mention the paradigm of building for a specific width and how it doesnt scale, tie it into
 
         ui-slide
             hgroup
@@ -110,6 +109,14 @@ block content
 
         ui-slide
             article
+                | feature detection
+
+        ui-slide
+            article
+                | polyfilling
+
+        ui-slide
+            article
                 | example of webp
 
 
@@ -139,10 +146,36 @@ block content
 
         ui-slide
             hgroup
+                h3 HTML Templates
+                h4 Web Components
+            article
+                | contents
+
+                div.slide-footer
+                    ul.browsers
+                        li.icon-firefox
+                            span 22
+                        li.icon-safari
+                        li.icon-chrome
+                        li.icon-opera
+                            span 15
+                        li.icon-IE.unsupported
+
+        ui-slide
+            hgroup
                 h3 Shadow DOM
                 h4 Web Components
             article
                 | contents
+
+                div.slide-footer
+                    ul.browsers
+                        li.icon-firefox.unsupported
+                        li.icon-safari.unsupported
+                        li.icon-chrome
+                        li.icon-opera
+                            span 15
+                        li.icon-IE.unsupported
 
         ui-slide
             hgroup
@@ -151,12 +184,14 @@ block content
             article
                 | contents
 
-        ui-slide
-            hgroup
-                h3 HTML Templates
-                h4 Web Components
-            article
-                | contents
+                div.slide-footer
+                    ul.browsers
+                        li.icon-firefox
+                        li.icon-safari.unsupported
+                        li.icon-chrome
+                        li.icon-opera
+                            span 15
+                        li.icon-IE.unsupported
 
         ui-slide
             hgroup
@@ -164,6 +199,15 @@ block content
                 h4 Web Components
             article
                 | contents
+
+                div.slide-footer
+                    ul.browsers
+                        li.icon-chrome.unsupported
+                        li.icon-safari.unsupported
+                        li.icon-opera.unsupported
+                        li.icon-firefox.unsupported
+                        li.icon-IE.unsupported
+
 
         ui-slide
             hgroup
