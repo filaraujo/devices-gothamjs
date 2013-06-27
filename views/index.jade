@@ -46,44 +46,79 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide(notes=".note")
+        ui-slide.responsive(notes=".note")
             hgroup
-                h3 What is Responsive Design
+                h3 Responsive Design
+                    span 2010
             article
-                span.note mention ethan marcot - spelling?
-                ul
-                    li media queries
-                    li flexible layouts
-                    li flexible media (images &amp; video)
-                    li scalable typography
-                    li
+                img(src="images/responsive-web.png")
+                p
+                    | "
+                    b Flexible grid layout
+                    |  with
+                    b  flexible images
+                    |  that incorporates
+                    b  media queries
+                    |  to create a responsive, adaptive layout."
+                p
+                    span.quoter - Ethan Marcotte
+
+                p.note
+                    | Base on print paradigms
+
+        ui-slide.responsive-now(notes=".note", items=".item, .item2, .item3")
+            hgroup
+                h3 Responsive Design
+                    span.item2 NOW
+            article
+                ul.list
+                    li.item media queries
+                    li.item flexible layouts
+                    li.item3.flexible
+                        span.item flexible images
+                        span.item2.orange  &amp; video
+                        span.hidden.orange flexible media
+                    li.item3.orange scalable typography
+                    li.item3.orange
                         | content choreography
                         span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
-                    li feature detection
-                    li feature omission
+                    li.item3.orange feature detection
+                    li.item3.orange feature omission
+                footer
 
 
-        ui-slide
+        ui-slide(notes=".note", items=".item")
             hgroup
-                h3 Responsive Design is hard!
+                h3 Responsive Design
+                    span IS HARD!
             article
-                | endless device/browse matrix
-                | mention the paradigm of building for a specific width and how it doesnt scale, tie it into
+                ul.list
+                    li.item endless browser/device matrix
+                    li.item device labs can be expensive
+                    li.item delays in browser implementations
+                    li.item lacking feature support
+                    li.item delays in standardization
+                    li.item non-evergreen browsers
+                footer
 
-        ui-slide
-            hgroup
-                h3 What's New in Responsive Design
-            article
-                | contents
 
-        ui-slide
+        ui-slide.responsive-easier(items="li")
             hgroup
-                h3 Viewport percentage unit
+                h3 Responsive Design
+                    span IS GETTING EASIER!
             article
-                p vw, vh, vmin, vmax
-                ul
-                    li units are based on vieport size
-                a(href="http://responsivility.aws.af.cm/?q=http://localhost:3001") demo
+                ul.list
+                    li viewport units -
+                        span  vh, vw, vmin, vmax
+                    li flexbox
+                    li grid layouts
+                    li touch standardization
+                    li advanced media queries -
+                        span  pointer, luminosity
+                    li css feature detection -
+                        span  @supports
+                    li offcanvas layouts
+                footer
 
          ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article
@@ -101,23 +136,46 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide
+        ui-slide.responsive.ress(notes=".note")
             hgroup
-                h3 What is RESS
+                h3 Responsive Design + Server-Side Components
+                    span RESS
             article
-                | contents
+                img(src="images/mobile-first.png")
 
-        ui-slide
-            article
-                | feature detection
+                p
+                    | "RESS combines
+                    b  adaptive layouts
+                    |  with
+                    b  server side component
+                    |  optimization. So a single set of page templates define an entire site for all devices but key components have device specific implementations rendered server side.
+                p
+                    span.quoter - Luke Wroblewski
 
-        ui-slide
-            article
-                | polyfilling
+                p.note
+                    | Base on print paradigms
 
-        ui-slide
+
+        ui-slide.responsive
+            hgroup
+                h3 RESS
+                    span HOW IT WORKS
             article
-                | example of webp
+                h3 WORK IN PROGRESS
+                ul.list
+                    li a client makes a request to the server
+                    li other unique clients make simliar requests
+                    li each client is tracked through a unique identifier
+                    li the server tailors each request to each client
+                footer
+
+
+        ui-slide.responsive
+            hgroup
+                h3 RESS
+                    span DEVICE PROFILE
+            article
+                iframe(src="http://devices.herokuapp.com/device", width="100%", height="100%")
 
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
@@ -136,22 +194,37 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide
+        ui-slide.responsive(items="li")
             hgroup
                 h3 Web Components
             article
-                | contents
-                ui-code(language="javascript")
-                    | var x = 'x';
+                ul.list
+                    li HTML Templates
+                    li Shadow DOM
+                    li Custom Elements
+                    li HTML Imports
 
-        ui-slide
+        ui-slide.responsive(items=".list li")
             hgroup
-                h3 HTML Templates
-                h4 Web Components
+                h3 Web Components
+                    span HTML TEMPLATES
             article
-                | contents
+                ui-code(title="html")
+                    :code
+                        <template>
+                            <video width="320" height="240" controls>
+                                <source src="demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="comment"></div>
+                        </template>
+                ul.list
+                    li hidden from DOM, can not be traversed
+                    li parsed; not rendered
+                    li scripts not run
+                    li stylesheets and images not loaded
+                    li media is not played
 
-                div.slide-footer
+                footer
                     ul.browsers
                         li.icon-firefox
                             span 22
@@ -161,14 +234,14 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide
+        ui-slide.responsive
             hgroup
-                h3 Shadow DOM
-                h4 Web Components
+                h3 Web Components
+                    span SHADOW DOM
             article
                 | contents
 
-                div.slide-footer
+                footer
                     ul.browsers
                         li.icon-firefox.unsupported
                         li.icon-safari.unsupported
@@ -177,14 +250,14 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide
+        ui-slide.responsive
             hgroup
-                h3 Custom Elements
-                h4 Web Components
+                h3 Web Components
+                    span CUSTOM ELEMENTS
             article
                 | contents
 
-                div.slide-footer
+                footer
                     ul.browsers
                         li.icon-firefox
                         li.icon-safari.unsupported
@@ -193,14 +266,14 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide
+        ui-slide.responsive
             hgroup
-                h3 HTML Imports
-                h4 Web Components
+                h3 Web Components
+                    span HTML IMPORTS
             article
                 | contents
 
-                div.slide-footer
+                footer
                     ul.browsers
                         li.icon-chrome.unsupported
                         li.icon-safari.unsupported
@@ -211,10 +284,10 @@ block content
 
         ui-slide
             hgroup
-                h3 Polymer Project
-                h4 Web Components
+                h3 Web Components
+                    span POLYMER PROJECT
             article
-                | contents
+                iframe(src="http://www.polymer-project.org/", width="100%", height="100%")
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article

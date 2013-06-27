@@ -35,6 +35,17 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+require('jade').filters.code = function( block ) {
+    return block
+        .replace( /&/g, '&amp;'  )
+        .replace( /</g, '&lt;'   )
+        .replace( />/g, '&gt;'   )
+        .replace( /"/g, '&quot;' )
+        .replace( /#/g, '&#35;'  )
+        .replace( /\\/g, '\\\\'  );
+        // .replace( /\n/g, '\\n'   );
+};
+
 // development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());

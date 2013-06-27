@@ -23,7 +23,7 @@ body
 
 @media all and (min-width:75.01em)
     html
-        font-size 2vmin
+        font-size 1.75vmin
 
 body
     font-family 'Lato', Arial
@@ -59,14 +59,22 @@ h4
     font-size: 1.8rem
     letter-spacing -.1rem
 
-.slide-footer
-    background #424953
-    bottom -1px
-    height 8vmin
-    left 0
-    opacity .9
-    position absolute
-    right 0
+h5
+    font-size: 1.3rem
+
+article
+    footer
+        background #424953
+        bottom -1px
+        height 8vmin
+        left 0
+        opacity .9
+        position absolute
+        right 0
+
+    iframe
+        border 0
+
 
 ul.browsers
     margin 0
@@ -75,7 +83,7 @@ ul.browsers
 
     li
         display inline-block
-        font-size 10vmin
+        font-size 7.25rem
         position relative
         margin 0 1vmin
         top -5vmin
@@ -85,13 +93,100 @@ ul.browsers
 
         span
             font-weight bolder
-            font-size 2.2vmin
+            font-size 1.2rem
             font-family 'Signika'
             position absolute
             left 50%
             margin-left: -1.1vmin
             bottom -1vmin
             right -5vmin
+
+hgroup
+    h3
+        span
+            color #f27935
+            font-size 1.6rem
+            margin-left 1vmin
+            word-spacing 3px
+
+ul.list
+    margin 0
+    padding 0
+
+    li
+        position relative
+        padding 1vmin 2vmin
+        border-bottom 1px solid #E6E6E6
+
+article
+    margin-top 4vmin
+
+
+
+// responsive
+ui-slide.responsive
+
+    p
+        color #999
+
+    b
+        color #323A45
+        font-family 'Open Sans'
+
+    span.quoter
+        float right
+        font-style italic
+        font-size 1rem
+        margin-right 1vmin
+
+    img
+        bottom -6vmin
+        margin auto
+        position absolute
+        left -2vmin
+        width 100%
+
+// responsive-now
+ui-slide.responsive-now
+    .orange
+        color #f27935
+
+    .flexible
+        opacity 1
+        border-bottom 0
+
+        .hidden
+            opacity 0
+
+        &.ui-slide-item-current,
+        &.ui-slide-item-done
+            border-bottom 1px solid #E6E6E6
+
+            .item,
+            .item2
+                opacity 0
+                display none
+
+            .hidden
+                opacity 1
+
+// responsive-easier
+ui-slide.responsive-easier
+    span
+        color #f27935
+
+
+// ress
+ui-slide.ress
+    h3
+        span
+            color #1fbba6
+    article
+        img
+            bottom 0
+            right 0
+            left auto
+
 
 
 
