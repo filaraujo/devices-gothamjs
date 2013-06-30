@@ -7,25 +7,6 @@ html
 
 body
     font-size 100%
-
-
-@media all and (min-width:0em) and (max-width:40em)
-    html
-        font-size 1.2vmin
-
-@media all and (min-width:40.01em) and (max-width:60em)
-    html
-        font-size 1.375vmin
-
-@media all and (min-width:60.01em) and (max-width:75em)
-    html
-        font-size 1.65vmin
-
-@media all and (min-width:75.01em)
-    html
-        font-size 1.75vmin
-
-body
     font-family 'Lato', Arial
     color #323a45
 
@@ -39,31 +20,37 @@ h6
 
 h1
     color #323a45
-    font-size 5rem
+    // font-size 5rem
+    font-size: 300%
     font-weight normal
     line-height 1.4
     letter-spacing -.2rem
 
 h2
     color: #5e6d81
-    font-size 2.8rem
+    // font-size 2.8rem
     font-weight normal
     letter-spacing -.2rem
 
 h3
-    font-size 2.8rem
+    font-size 2.8em
     letter-spacing -.2rem
 
 h4
     color: #a9a9a9
-    font-size: 1.8rem
+    // font-size: 1.8rem
     letter-spacing -.1rem
 
 h5
-    font-size: 1.3rem
+    // font-size: 1.3rem
 
+
+//article
 article
-    footer
+    border 1px solid #000
+    padding-top 2em
+
+    > footer
         background #424953
         bottom -1px
         height 8vmin
@@ -75,51 +62,72 @@ article
     iframe
         border 0
 
-
-ul.browsers
-    margin 0
-    padding 0
-    text-align center
-
-    li
-        display inline-block
-        font-size 7.25rem
-        position relative
-        margin 0 1vmin
-        top -5vmin
-
-        &.unsupported:before
-            opacity .2
-
-        span
-            font-weight bolder
-            font-size 1.2rem
-            font-family 'Signika'
-            position absolute
-            left 50%
-            margin-left: -1.1vmin
-            bottom -1vmin
-            right -5vmin
-
+// hgroup
 hgroup
     h3
         span
             color #f27935
-            font-size 1.6rem
-            margin-left 1vmin
+            font-size .6em
+            margin-left .25em
+            text-transform uppercase
             word-spacing 3px
 
-ul.list
+            &.large
+                font-size 1em
+
+// blockquote
+blockquote
+    font-size 1em
+    margin 1em 2em
+
+    p
+        margin 0
+        padding 0
+
+    footer
+        font-style italic
+        margin-left 2em
+        text-align left
+
+        p
+            margin-top .5em
+
+ul
     margin 0
     padding 0
 
+
     li
+        margin 0
+        padding 0
+
+    &.list li
         position relative
-        padding 1vmin 2vmin
+        padding 1em 2em
         border-bottom 1px solid #E6E6E6
 
-article
-    margin-top 4vmin
+    &.browsers
+        text-align center
+
+        li
+            display inline-block
+            font-size 5em
+            position relative
+            margin 0 .1em
+            top -.5em
+
+            &.unsupported:before
+                opacity .2
+
+        span
+            font-weight bold
+            font-size .25em
+            position absolute
+            right 0
+            bottom -.33em
+            right -.33em
+
+
 
 
 
@@ -132,12 +140,6 @@ ui-slide.responsive
     b
         color #323A45
         font-family 'Open Sans'
-
-    span.quoter
-        float right
-        font-style italic
-        font-size 1rem
-        margin-right 1vmin
 
     img
         bottom -6vmin
@@ -196,7 +198,7 @@ ui-slide.splash
         width: 40%
 
 // title slide
-ui-slide[type="title"]
+ui-slide.title
     p
         color #797979
         line-height 1vmin

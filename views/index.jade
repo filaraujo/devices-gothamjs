@@ -5,7 +5,7 @@ block content
         ui-slide.splash(vcenter="true", center="true")
             img(src="http://placehold.it/383x92")
 
-        ui-slide(type="title")
+        ui-slide.title
             hgroup
                 h1 RessDriven WebPonents
                 h2 Responsive Web Design + Server Side Web Components
@@ -52,16 +52,17 @@ block content
                     span 2010
             article
                 img(src="images/responsive-web.png")
-                p
-                    | "
-                    b Flexible grid layout
-                    |  with
-                    b  flexible images
-                    |  that incorporates
-                    b  media queries
-                    |  to create a responsive, adaptive layout."
-                p
-                    span.quoter - Ethan Marcotte
+                blockquote
+                    p
+                        | "
+                        b Flexible grid layout
+                        |  with
+                        b  flexible images
+                        |  that incorporates
+                        b  media queries
+                        |  to create a responsive, adaptive layout."
+                    footer
+                        p  - Ethan Marcotte
 
                 p.note
                     | Base on print paradigms
@@ -95,8 +96,7 @@ block content
                 ul.list
                     li.item endless browser/device matrix
                     li.item device labs can be expensive
-                    li.item delays in browser implementations
-                    li.item lacking feature support
+                    li.item delays in browser implementation
                     li.item delays in standardization
                     li.item non-evergreen browsers
                 footer
@@ -117,7 +117,8 @@ block content
                         span  pointer, luminosity
                     li css feature detection -
                         span  @supports
-                    li offcanvas layouts
+                    li new design paradigm -
+                        span  offcanvas layouts
                 footer
 
          ui-slide.topics(backdrop="false", background="false", items="li.scale")
@@ -287,7 +288,7 @@ block content
                 h3 Web Components
                     span POLYMER PROJECT
             article
-                iframe(src="http://www.polymer-project.org/", width="100%", height="100%")
+                iframe(data-src="http://www.polymer-project.org/", width="100%", height="100%")
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article
