@@ -3,7 +3,7 @@ extends layout
 block content
     ui-slides
         ui-slide.splash(vcenter="true", center="true")
-            img(src="http://placehold.it/383x92")
+            img(data-src="http://placehold.it/383x92")
 
         ui-slide.title
             hgroup
@@ -18,32 +18,32 @@ block content
             article
                 ul
                     li
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Responsive Design
                     li
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span RESS
                     li
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Web Components
                     li
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Now what?
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article
                 ul
                     li.scale
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Responsive Design
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span RESS
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Web Components
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Now what?
 
         ui-slide.responsive(notes=".note")
@@ -51,7 +51,7 @@ block content
                 h3 Responsive Design
                     span 2010
             article
-                img(src="images/responsive-web.png")
+                img(data-src="images/responsive-web.png", title="Responsive Web")
                 blockquote
                     p
                         | "
@@ -125,16 +125,16 @@ block content
             article
                 ul
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Responsive Design
                     li.scale
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span RESS
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Web Components
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Now what?
 
         ui-slide.responsive.ress(notes=".note")
@@ -142,7 +142,7 @@ block content
                 h3 Responsive Design + Server-Side Components
                     span RESS
             article
-                img(src="images/mobile-first.png")
+                img(data-src="images/mobile-first.png", title="Mobile First")
 
                 p
                     | "RESS combines
@@ -162,21 +162,80 @@ block content
                 h3 RESS
                     span HOW IT WORKS
             article
-                h3 WORK IN PROGRESS
+                p analogy of a hotdog truck
                 ul.list
                     li a client makes a request to the server
                     li other unique clients make simliar requests
                     li each client is tracked through a unique identifier
+                    li the server requests a profile cookie
+                    li if you dont have a cookie profile the
                     li the server tailors each request to each client
                 footer
 
+        ui-slide.ress-your-server(items="span")
+            article
+                img(data-src="/images/your-server.jpg", title="Your Server")
 
-        ui-slide.responsive
+                div
+                    span Server
+                    span Wafel Concierge
+
+        ui-slide.ress-similiar-requests(items="span")
+            article
+                img(data-src="/images/similiar-requests.jpg", title="Similiar Requests")
+                h4
+                    b similiar
+                    |  yet
+                    b  unique
+                    |  requests
+
+                span bacon
+                    i  wafel
+
+                span chilli
+                    i wafel
+
+                span chocolate
+                    i wafel
+
+                span Bananas
+                    i wafel
+
+
+        ui-slide.ress-not-what-it-seems
+            article
+                img(data-src="/images/not-what-it-seems.jpg", title="Not What It Seems")
+                div
+                p
+                    span NOT
+                    | WHAT IT SEEMS
+
+        ui-slide.ress-sprinkle-magic(items="span")
+            article
+                img(data-src="/images/sprinkle-magic.jpg", title="Sprinkle Magic")
+                h4 sprinkle on the magic!
+
+                div
+                    span polyfill
+                    span feature adapt
+                    span bundle resources
+                    span cache
+
+        ui-slide.ress-cookie
+            article
+                img(data-src="/images/cookie.jpg", title="Cookie")
+                h4 cookies!
+                    b  where?
+
+
+
+
+        ui-slide.ress
             hgroup
                 h3 RESS
                     span DEVICE PROFILE
             article
-                iframe(src="http://devices.herokuapp.com/device", width="100%", height="100%")
+                iframe(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
 
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
@@ -195,7 +254,7 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide.responsive(items="li")
+        ui-slide.components(items="li")
             hgroup
                 h3 Web Components
             article
@@ -205,7 +264,7 @@ block content
                     li Custom Elements
                     li HTML Imports
 
-        ui-slide.responsive(items=".list li")
+        ui-slide.components(items=".list li")
             hgroup
                 h3 Web Components
                     span HTML TEMPLATES
@@ -235,7 +294,7 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.responsive
+        ui-slide.components
             hgroup
                 h3 Web Components
                     span SHADOW DOM
@@ -251,7 +310,7 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.responsive
+        ui-slide.components
             hgroup
                 h3 Web Components
                     span CUSTOM ELEMENTS
@@ -267,7 +326,7 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.responsive
+        ui-slide.components
             hgroup
                 h3 Web Components
                     span HTML IMPORTS
@@ -283,7 +342,7 @@ block content
                         li.icon-IE.unsupported
 
 
-        ui-slide
+        ui-slide.components
             hgroup
                 h3 Web Components
                     span POLYMER PROJECT
@@ -294,16 +353,16 @@ block content
             article
                 ul
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Responsive Design
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span RESS
                     li.faded
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Web Components
                     li.scale
-                        img(src="http://placehold.it/200x200")
+                        img(data-src="http://placehold.it/200x200")
                         span Now what?
 
         ui-slide

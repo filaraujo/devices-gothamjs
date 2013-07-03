@@ -1,6 +1,14 @@
 @import normalize
 @import nib
 @import font
+@import images
+
+
+$green = #1fbba6
+$orange = #f27935
+$blue = #14b9d6
+$grayblue = #323a45
+$yellow = #ffcb1d
 
 html
     font-size  62.5%
@@ -8,7 +16,7 @@ html
 body
     font-size 100%
     font-family 'Lato', Arial
-    color #323a45
+    color $grayblue
 
 h1,
 h2,
@@ -19,7 +27,7 @@ h6
     margin 0
 
 h1
-    color #323a45
+    color $grayblue
     // font-size 5rem
     font-size: 300%
     font-weight normal
@@ -38,16 +46,15 @@ h3
 
 h4
     color: #a9a9a9
-    // font-size: 1.8rem
-    letter-spacing -.1rem
+    font-size: 2em
+    letter-spacing -.1em
 
 h5
-    // font-size: 1.3rem
+    // font-size: 1.3em
 
 
 //article
 article
-    border 1px solid #000
     padding-top 2em
 
     > footer
@@ -66,14 +73,11 @@ article
 hgroup
     h3
         span
-            color #f27935
+            color $orange
             font-size .6em
             margin-left .25em
             text-transform uppercase
             word-spacing 3px
-
-            &.large
-                font-size 1em
 
 // blockquote
 blockquote
@@ -101,10 +105,13 @@ ul
         margin 0
         padding 0
 
-    &.list li
-        position relative
-        padding 1em 2em
-        border-bottom 1px solid #E6E6E6
+    &.list
+        list-style disc
+
+        li
+            border-bottom 1px solid #E6E6E6
+            position relative
+            padding 1em 2em
 
     &.browsers
         text-align center
@@ -138,20 +145,13 @@ ui-slide.responsive
         color #999
 
     b
-        color #323A45
+        color $grayblue
         font-family 'Open Sans'
-
-    img
-        bottom -6vmin
-        margin auto
-        position absolute
-        left -2vmin
-        width 100%
 
 // responsive-now
 ui-slide.responsive-now
     .orange
-        color #f27935
+        color $orange
 
     .flexible
         opacity 1
@@ -175,19 +175,166 @@ ui-slide.responsive-now
 // responsive-easier
 ui-slide.responsive-easier
     span
-        color #f27935
-
+        color $orange
 
 // ress
 ui-slide.ress
-    h3
+    h3 span
+        color $green
+
+
+ui-slide.ress-similiar-requests,
+ui-slide.ress-sprinkle-magic
+
+    h4
+        color #fff
+        background $grayblue
+        font-weight normal
+        position absolute
+        padding 1em 2em 1em 4em
+        top 0
+        left 0
+        opacity .9
+        letter-spacing 0
+        word-spacing .2em
+
+        b
+            font-weight bold
+            font-size 1.1em
+
+    span
+        position absolute
+        color #fff
+        padding .4em 3em
+        text-transform uppercase
+        z-index 2
+
+        i
+            font-size .8em
+            margin-left .3em
+
+        b
+            font-size: 1.3em
+
+        &:nth-of-type(1)
+            background $green
+            bottom 18%
+            left 0
+            padding-right 2em
+            text-align right
+
+        &:nth-of-type(2)
+            background $blue
+            bottom 16%
+            right 10%
+
+        &:nth-of-type(3)
+            background $orange
+            bottom 6%
+            left 46%
+
+        &:nth-of-type(4)
+            background #ffcb1d
+            color $grayblue
+            left 30%
+            bottom 30%
+
+ui-slide.ress-sprinkle-magic
+    h4
+        left auto
+        padding 1em 4em 1em 2em
+        right 0
+        bottom 0
+        top auto
+
+    div
+        overflow auto
+        text-align right
+        position absolute
+        top 16%
+        right 67.5%
+        left 0
+        transform rotate(13deg)
+
+    span
+        padding-right 2em
+        position static
+        clear both
+        float right
+        margin-bottom .4em
+
+
+
+ui-slide.ress-not-what-it-seems
+    div
+        position absolute
+        top -1%
+        bottom -1%
+        left 0
+        right 70%
+        background $orange
+        opacity 0.7
+
+    p
+        color $grayblue
+        position absolute
+        font-weight bold
+        bottom 10%
+        left 4%
+        line-height 2.5em
+        font-size 2.1em
+        text-align center
+        width 22%
+
         span
-            color #1fbba6
-    article
-        img
-            bottom 0
-            right 0
-            left auto
+            color #fff
+            display block
+            font-size 3.8em
+            letter-spacing -3px
+
+ui-slide.ress-your-server
+    div
+        font-size 1.4em
+        position absolute
+        left 58%
+        top 44%
+
+        span
+            float left
+            text-transform uppercase
+
+            &:nth-child(1)
+                background $yellow
+                padding .4em 2em .4em 2em
+                text-align right
+
+            &:nth-child(2)
+                background $grayblue
+                color $yellow
+                font-size .7em
+                padding .6em 2em .6em 2em
+                word-spacing .3em
+
+
+ui-slide.ress-cookie
+    h4
+        color #fff
+        background $grayblue
+        font-weight normal
+        position absolute
+        padding 1em 2em 1em 4em
+        left 0
+        bottom -1px
+        opacity .8
+        letter-spacing 0
+        word-spacing .2em
+
+
+
+// webcomponents
+ui-slide.components
+    h3 span
+        color $green
 
 
 
@@ -208,7 +355,6 @@ ui-slide.title
 
 // topic slides
 ui-slide.topics
-    article
 
     ul
         -webkit-align-items center
@@ -236,7 +382,7 @@ ui-slide.topics
             opacity .4
 
         &.scale
-            opacity .4
+            opacity 1
 
             &.ui-slide-item-current
                 opacity 1
