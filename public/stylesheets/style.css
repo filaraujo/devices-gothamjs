@@ -114,8 +114,8 @@ ui-slide.ress-unique-devices div{bottom:10%;left:0;top:auto;right:0;-webkit-tran
 ui-slide.ress-unique-devices span{display:block;float:left;font-size:.9em;padding:.7em 2em;margin:0;margin-bottom:1em;}
 ui-slide.ress-unique-devices span:nth-child(1){float:right}
 ui-slide.ress-not-what-it-seems div{position:absolute;top:-1%;bottom:-1%;left:0;right:70%;background:#f27935;-webkit-box-shadow:1px 0 3px rgba(0,0,0,0.3);box-shadow:1px 0 3px rgba(0,0,0,0.3);opacity:.4;filter:alpha(opacity=40);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"}
-ui-slide.ress-not-what-it-seems p{bottom:10%;color:#fff;font-size:1.8em;font-weight:normal;left:4%;line-height:2.5em;position:absolute;text-align:center;text-shadow:0 1px 1px rgba(0,0,0,0.3);width:22%;}
-ui-slide.ress-not-what-it-seems p span{display:block;font-size:3.9em;font-weight:bold;letter-spacing:-3px}
+ui-slide.ress-not-what-it-seems p{bottom:0%;color:#fff;font-size:1.8em;font-weight:normal;left:0;line-height:2.5em;padding:.8em;position:absolute;right:70%;text-shadow:0 2px 4px rgba(0,0,0,0.3);}
+ui-slide.ress-not-what-it-seems p span{display:block;font-size:2.7em;font-weight:bold;letter-spacing:-3px;word-break:word-break;text-align:left}
 ui-slide.ress-your-server div{font-size:1.4em;position:absolute;left:58%;top:44%;}
 ui-slide.ress-your-server div span{float:left;text-transform:uppercase;}
 ui-slide.ress-your-server div span:nth-child(1){background:#ffcb1d;padding:.4em 2em .4em 2em;text-align:right}
