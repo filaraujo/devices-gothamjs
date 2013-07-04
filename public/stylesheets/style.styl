@@ -46,7 +46,7 @@ h3
 
 h4
     color: #a9a9a9
-    font-size: 2em
+    font-size: 1.6em
     letter-spacing -.1em
 
 h5
@@ -184,7 +184,8 @@ ui-slide.ress
 
 
 ui-slide.ress-similiar-requests,
-ui-slide.ress-sprinkle-magic
+ui-slide.ress-sprinkle-magic,
+ui-slide.ress-unique-devices
 
     h4
         color #fff
@@ -200,7 +201,8 @@ ui-slide.ress-sprinkle-magic
 
         b
             font-weight bold
-            font-size 1.1em
+            font-size 1.3em
+            font-style italic
 
     span
         position absolute
@@ -234,12 +236,13 @@ ui-slide.ress-sprinkle-magic
             left 46%
 
         &:nth-of-type(4)
-            background #ffcb1d
+            background $yellow
             color $grayblue
             left 30%
             bottom 30%
 
-ui-slide.ress-sprinkle-magic
+ui-slide.ress-sprinkle-magic,
+ui-slide.ress-unique-devices
     h4
         left auto
         padding 1em 4em 1em 2em
@@ -263,6 +266,35 @@ ui-slide.ress-sprinkle-magic
         float right
         margin-bottom .4em
 
+ui-slide.ress-unique-devices
+    h4
+        background $blue
+        padding 1em 4em 1em 2em
+        right 0
+        bottom auto
+        top 0
+
+    div
+        bottom 10%
+        left 0
+        top auto
+        right 0
+        transform none
+        text-align left
+
+    span
+        display block
+        float left
+        font-size .9em
+        padding .7em 2em
+        margin 0
+        margin-bottom 1em
+
+        &:nth-child(1)
+            float right
+
+
+
 
 
 ui-slide.ress-not-what-it-seems
@@ -273,24 +305,27 @@ ui-slide.ress-not-what-it-seems
         left 0
         right 70%
         background $orange
-        opacity 0.7
+        box-shadow 1px 0 3px rgba(0,0,0,.3)
+        opacity .4
 
     p
-        color $grayblue
-        position absolute
-        font-weight bold
         bottom 10%
+        color #fff
+        font-size 1.8em
+        font-weight normal
         left 4%
         line-height 2.5em
-        font-size 2.1em
+        position absolute
         text-align center
+        text-shadow 0 1px 1px rgba(0,0,0,.3)
         width 22%
 
         span
-            color #fff
             display block
-            font-size 3.8em
+            font-size 3.9em
+            font-weight bold
             letter-spacing -3px
+
 
 ui-slide.ress-your-server
     div
