@@ -14,7 +14,7 @@ block content
                     p Senior Lead Consultant, Sungard
                     p Gotham JS 2013
 
-        ui-slide.topics(backdrop="false", background="false", items="li", items-fx="fade")
+        ui-slide.topics(backdrop="false", background="false", items="li", items-fx="fade", vcenter="true")
             article
                 ul
                     li
@@ -30,7 +30,7 @@ block content
                         img(data-src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+        ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
                     li.scale
@@ -46,7 +46,7 @@ block content
                         img(data-src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide.responsive(notes=".note")
+        ui-slide.responsive-design(notes=".note")
             hgroup
                 h3 Responsive Design
                     span 2010
@@ -121,7 +121,7 @@ block content
                         span  offcanvas layouts
                 footer
 
-         ui-slide.topics(backdrop="false", background="false", items="li.scale")
+         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
                     li.faded
@@ -155,22 +155,6 @@ block content
 
                 p.note
                     | Base on print paradigms
-
-
-        ui-slide.responsive
-            hgroup
-                h3 RESS
-                    span HOW IT WORKS
-            article
-                p analogy of a hotdog truck
-                ul.list
-                    li a client makes a request to the server
-                    li other unique clients make simliar requests
-                    li each client is tracked through a unique identifier
-                    li the server requests a profile cookie
-                    li if you dont have a cookie profile the
-                    li the server tailors each request to each client
-                footer
 
         ui-slide.ress-your-server(items="span")
             article
@@ -222,7 +206,7 @@ block content
                 div
                 p
                     span USER AGENT ?
-                    | NOT WHAT IT SEEMS
+                    | REALLY?
 
         ui-slide.ress-cookie
             article
@@ -230,6 +214,14 @@ block content
                 h4
                     | cookie?
                     b  Nom Nom Nom
+
+
+        ui-slide.ress-feature-testing
+            article
+                img(data-src="/images/feature-testing.jpg", title="Feature Testing")
+                h4
+                    b feature
+                    |  testing
 
         ui-slide.ress-sprinkle-magic(items="span")
             article
@@ -243,8 +235,6 @@ block content
                     span cache
 
 
-
-
         ui-slide.ress
             hgroup
                 h3 RESS
@@ -253,7 +243,7 @@ block content
                 iframe(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
 
 
-        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+        ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
                     li.faded
@@ -269,15 +259,18 @@ block content
                         img(src="http://placehold.it/200x200")
                         span Now what?
 
-        ui-slide.components(items="li")
+        ui-slide.components(items="li", notes=".notes")
             hgroup
                 h3 Web Components
+                    span the new stuff
             article
                 ul.list
                     li HTML Templates
                     li Shadow DOM
                     li Custom Elements
                     li HTML Imports
+
+                p.notes test
 
         ui-slide.components(items=".list li")
             hgroup
@@ -299,6 +292,33 @@ block content
                     li stylesheets and images not loaded
                     li media is not played
 
+
+        ui-slide.components(notes=".notes li", items=".item, .browsers")
+            hgroup
+                h3 Web Components
+                    span HTML TEMPLATES
+            article
+                ui-code(title="html")
+                    :code
+                        <template>
+                            <video width="320" height="240" controls>
+                                <source src="demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="comment"></div>
+                        </template>
+
+                div.item
+                    ui-code(title="javascript")
+                        :code
+                            var content = document.querySelector('template').content;
+
+                            content.querySelector('source').src = "newDemo.mp4";
+
+                            document.body.appendChild(content.cloneNode(true));
+
+                ul.notes
+                    li once a template is cloned, it becomes live
+
                 footer
                     ul.browsers
                         li.icon-firefox
@@ -309,12 +329,59 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.components
+        ui-slide.components-shadow-dom(items=".item, .list li")
             hgroup
                 h3 Web Components
                     span SHADOW DOM
             article
-                | contents
+
+                input(type="text", placeholder="placeholder text")
+
+                ui-code(title="html")
+                    :code
+                        <input type="text" placeholder="placeholder text">
+
+                div.item
+                    ui-code(title="rendered html")
+                        :code
+                            <input type="text" placeholder="placeholder text">
+                                #document-fragment
+                                    <div></div>
+                                    <div pseudo="-webkit-input-placeholder" style="visibility: visible; text-overflow: clip;">placeholder text</div>
+                            </input>
+                ul.list
+                    li hidden DOM can not be accessed from outside javascript
+                    li can be styled by host css via pseudo selectors
+                    li insertion points
+
+        ui-slide.components-shadow-dom(items="div, .browsers")
+            hgroup
+                h3 Web Components
+                    span SHADOW DOM
+            article
+                ui-code(title="html")
+                    :code
+                        <div id="host">
+                            <h1>Heading</h1>
+                        </div>
+
+                div
+                    ui-code(type="jav", title="javascript")
+                        :code
+                            var host = document.querySelector('#host'),
+                                shadow = host.createShadowRoot(), // prefixed
+                                p = document.createElement('p');
+
+                            p.textContent = 'paragraph content';
+                            shadow.appendChild(p);
+                div
+                    ui-code(title="rendered html")
+                        :code
+                            <div id="host">
+                                <h1>Heading</h1>
+                                #document-fragment
+                                    <p>paragraph content</p>
+                            </div>
 
                 footer
                     ul.browsers
@@ -325,12 +392,71 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.components
+        ui-slide.components(items=".list li", notes=".notes li")
             hgroup
                 h3 Web Components
                     span CUSTOM ELEMENTS
             article
-                | contents
+                div
+                    ui-code
+                        :code
+                            <element name="foo">
+                                <script>
+                                    this.register({
+                                        prototype: {
+                                            readyCallback: function() {
+                                                console.log('foo ready');
+                                            },
+                                            more: function(){
+                                                console.log('more foo');
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </element>
+
+                ul.list
+                    li lifecycle callbacks
+                    li can extend other elements
+
+                ui.notes
+                    li developers have been using custom elements for years
+
+        ui-slide.components(items="div, .browsers")
+            hgroup
+                h3 Web Components
+                    span CUSTOM ELEMENTS
+            article
+
+                ui-code
+                    :code
+                        <element name="foo" constructor="Foo">
+                            <script>
+                                this.register({
+                                    prototype: {
+                                        ...
+                                    }
+                                });
+                            </script>
+                        </element>
+
+
+                div
+                    ui-code(title="html")
+                        :code
+                            <foo></foo>
+
+                div
+                    ui-code(title="javascript")
+                        :code
+                            var foo = document.createElement('foo');
+                            foo.more(); // more method is executed
+
+                div
+                    ui-code(title="javascript")
+                        :code
+                            var foo = new Foo();
+                            document.body.appendChild(foo);
 
                 footer
                     ul.browsers
@@ -341,12 +467,39 @@ block content
                             span 15
                         li.icon-IE.unsupported
 
-        ui-slide.components
+        ui-slide.components(notes=".notes li", items="div, .browsers")
             hgroup
                 h3 Web Components
                     span HTML IMPORTS
             article
-                | contents
+                ui-code(title="index.html")
+                    :code
+                        <!DOCTYPE html>
+                        <html>
+                            <head>
+                                <link rel="import" href="foo.html">
+                            </head>
+                            <body>
+                                <foo></foo> <!-- element definition loaded from foo.html-->
+                            </body>
+                        </html>
+
+                div
+                    ui-code(title="foo.html")
+                        :code
+                            <link rel="import" href="bar.html">
+
+                            <element name="foo">
+                                <template>
+                                    <bar></bar>
+                                </template>
+                                <script>
+                                    ...
+                                </script>
+                            </element>
+                ul.notes
+                    li imported element definitions can contain additional imports
+                    li no browser support!
 
                 footer
                     ul.browsers
