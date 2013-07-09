@@ -14,39 +14,26 @@ block content
                     p Senior Lead Consultant, Sungard
                     p Gotham JS 2013
 
-        ui-slide.topics(backdrop="false", background="false", items="li", items-fx="fade", vcenter="true")
+        ui-slide.topics(backdrop="false", background="false", items=".items li", items-fx="fade", vcenter="true", notes=".notes li")
             article
-                ul
-                    li
-                        img(data-src="http://placehold.it/200x200")
-                        span Responsive Design
-                    li
-                        img(data-src="http://placehold.it/200x200")
-                        span RESS
-                    li
-                        img(data-src="http://placehold.it/200x200")
-                        span Web Components
-                    li
-                        img(data-src="http://placehold.it/200x200")
-                        span Now what?
+                ul.items
+                    li  Responsive Design
+                    li  RESS
+                    li  Web Components
+
+                ul.notes
+                    li This talk isn't about implementation but theory and idea behind
+                    li three parts
+                    li work in progress demo
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
-                    li.scale
-                        img(data-src="http://placehold.it/200x200")
-                        span Responsive Design
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span RESS
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Web Components
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Now what?
+                    li.scale Responsive Design
+                    li.faded RESS
+                    li.faded Web Components
 
-        ui-slide.responsive-design(notes=".note")
+        ui-slide.responsive-design(notes=".notes li")
             hgroup
                 h3 Responsive Design
                     span 2010
@@ -64,10 +51,14 @@ block content
                     footer
                         p  - Ethan Marcotte
 
-                p.note
-                    | Base on print paradigms
+                ul.notes
+                    li In 2010
+                    li Base on print paradigms
 
-        ui-slide.responsive-now(notes=".note", items=".item, .item2, .item3")
+
+
+
+        ui-slide.responsive-now(items=".item, .item2, .item3")
             hgroup
                 h3 Responsive Design
                     span.item2 NOW
@@ -80,12 +71,11 @@ block content
                         span.item2.orange  &amp; video
                         span.hidden.orange flexible media
                     li.item3.orange scalable typography
-                    li.item3.orange
-                        | content choreography
-                        span.note Your DOM order is your definitive order. Build for this order first before addressing content choreography concerns. - Jordan Moore
+                    li.item3.orange content choreography
                     li.item3.orange feature detection
                     li.item3.orange feature omission
                 footer
+
 
 
         ui-slide(notes=".note", items=".item")
@@ -100,6 +90,8 @@ block content
                     li.item delays in standardization
                     li.item non-evergreen browsers
                 footer
+
+
 
 
         ui-slide.responsive-easier(items="li")
@@ -121,21 +113,18 @@ block content
                         span  offcanvas layouts
                 footer
 
+
+
+
          ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Responsive Design
-                    li.scale
-                        img(data-src="http://placehold.it/200x200")
-                        span RESS
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Web Components
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Now what?
+                    li.faded Responsive Design
+                    li.scale RESS
+                    li.faded Web Components
+
+
+
 
         ui-slide.responsive.ress(notes=".note")
             hgroup
@@ -156,19 +145,26 @@ block content
                 p.note
                     | Base on print paradigms
 
+
+
+
         ui-slide.ress-your-server(items="span")
             article
-                img(data-src="/images/your-server.jpg", title="Your Server")
+                img.full(data-src="/images/your-server.jpg", alt="Your Server")
 
                 div
                     span Server
                     span Waffle Concierge
 
+
+
+
         ui-slide.ress-similiar-requests(items="span")
             article
-                img(data-src="/images/similiar-requests.jpg", title="Similiar Requests")
+                img.full(data-src="/images/similiar-requests.jpg", alt="Similiar Requests")
                 h4
-                    b similiar
+                    | making
+                    b  similiar
                     |  yet
                     b  unique
                     |  requests
@@ -186,11 +182,22 @@ block content
                     i Waffle
 
 
+
+        ui-slide.ress-precious-cookies(notes=".note")
+            article
+                img.full(data-src="/images/precious-cookies.jpg", alt="Cookie Profile") h4
+                h4
+                    | with a
+                    b  cookie
+                    |  profile
+
+                p.note used to category and inventory browse/device functionality
+
         ui-slide.ress-unique-devices(items="span")
             article
-                img(data-src="/images/unique-devices.jpg", title="Unique Devices")
+                img.full(data-src="/images/unique-devices.jpg", alt="Unique Devices")
                 h4
-                    | with an
+                    | create an
                     b  unique
                     |  identifier
 
@@ -200,32 +207,30 @@ block content
 
 
 
-        ui-slide.ress-not-what-it-seems
+
+        ui-slide.ress-not-what-it-seems(notes=".note")
             article
-                img(data-src="/images/not-what-it-seems.jpg", title="Not What It Seems")
+                img.full(data-src="/images/not-what-it-seems.jpg", alt="Not What It Seems")
                 div
                 p
                     span USER AGENT ?
                     | REALLY?
 
-        ui-slide.ress-cookie
-            article
-                img(data-src="/images/cookie.jpg", title="Cookie")
-                h4
-                    | cookie?
-                    b  Nom Nom Nom
+                p.note feature testing, not for browser sniffing
+
 
 
         ui-slide.ress-feature-testing
             article
-                img(data-src="/images/feature-testing.jpg", title="Feature Testing")
+                img.full(data-src="/images/feature-testing.jpg", alt="Feature Testing")
                 h4
-                    b feature
+                    | withe
+                    b  feature
                     |  testing
 
         ui-slide.ress-sprinkle-magic(items="span")
             article
-                img(data-src="/images/sprinkle-magic.jpg", title="Sprinkle Magic")
+                img.full(data-src="/images/sprinkle-magic.jpg", alt="Sprinkle Magic")
                 h4 sprinkle on the magic!
 
                 div
@@ -246,29 +251,23 @@ block content
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
-                    li.faded
-                        img(src="http://placehold.it/200x200")
-                        span Responsive Design
-                    li.faded
-                        img(src="http://placehold.it/200x200")
-                        span RESS
-                    li.scale
-                        img(src="http://placehold.it/200x200")
-                        span Web Components
-                    li.faded
-                        img(src="http://placehold.it/200x200")
-                        span Now what?
 
-        ui-slide.components(items="li", notes=".notes")
-            hgroup
-                h3 Web Components
-                    span the new stuff
+                    li.faded Responsive Design
+                    li.faded RESS
+                    li.scale Web Components
+
+        ui-slide.components-whats-new(items="span", notes=".notes")
             article
-                ul.list
-                    li HTML Templates
-                    li Shadow DOM
-                    li Custom Elements
-                    li HTML Imports
+                img.full(data-src="/images/whats-new.jpg", alt="What's New")
+                h4 the new
+                    b  building blocks
+                    |  of the web
+
+                div
+                    span HTML Templates
+                    span Shadow DOM
+                    span Custom Elements
+                    span HTML Imports
 
                 p.notes test
 
@@ -433,9 +432,7 @@ block content
                         <element name="foo" constructor="Foo">
                             <script>
                                 this.register({
-                                    prototype: {
-                                        ...
-                                    }
+                                    prototype: { ... }
                                 });
                             </script>
                         </element>
@@ -484,22 +481,34 @@ block content
                             </body>
                         </html>
 
+
+        ui-slide.components(notes=".notes li", items="div, .browsers")
+            hgroup
+                h3 Web Components
+                    span HTML IMPORTS
+            article
+                ui-code(title="index.html")
+                    :code
+                        <link rel="import" href="foo.html">
+                        <foo></foo> <!-- element definition loaded from foo.html-->
+
                 div
                     ui-code(title="foo.html")
                         :code
                             <link rel="import" href="bar.html">
+                            <link rel="import" href="baz.html">
 
                             <element name="foo">
                                 <template>
-                                    <bar></bar>
+                                    <bar>foo-bar</bar>
+                                    <baz>foo-baz</baz>
                                 </template>
                                 <script>
-                                    ...
+                                    this.register({
+                                        prototype: { ... }
+                                    });
                                 </script>
                             </element>
-                ul.notes
-                    li imported element definitions can contain additional imports
-                    li no browser support!
 
                 footer
                     ul.browsers
@@ -510,12 +519,16 @@ block content
                         li.icon-IE.unsupported
 
 
-        ui-slide.components
-            hgroup
-                h3 Web Components
-                    span POLYMER PROJECT
+        ui-slide.components-implement
+            article
+                img.full(data-src="/images/implement.jpg", alt="Limited Support")
+                h4 very limited support!
+
+
+        ui-slide.components-polymer
             article
                 iframe(data-src="http://www.polymer-project.org/", width="100%", height="100%")
+                h4 web components polyfills + other goodies
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale")
             article

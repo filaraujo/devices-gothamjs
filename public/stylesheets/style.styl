@@ -79,6 +79,9 @@ hgroup
             text-transform uppercase
             word-spacing .1em
 
+.lead-in
+    font-size 2em
+
 // blockquote
 blockquote
     font-size 1em
@@ -353,7 +356,8 @@ ui-slide.ress-your-server
 
 
 ui-slide.ress-cookie,
-ui-slide.ress-feature-testing
+ui-slide.ress-feature-testing,
+ui-slide.ress-precious-cookies
     h4
         color #fff
         background $grayblue
@@ -366,6 +370,10 @@ ui-slide.ress-feature-testing
         letter-spacing 0
         word-spacing .2em
 
+        b
+            font-style italic
+            font-weight bold
+            font-size 1.3em
 
 
 // webcomponents
@@ -374,7 +382,75 @@ ui-slide[class^="components"]
         color $blue
 
 
+ui-slide.components-implement,
+ui-slide.components-polymer,
+ui-slide.components-whats-new
+     h4
+        color #fff
+        background $green
+        font-weight normal
+        position absolute
+        padding 1em 2em 1em 4em
+        left 0
+        bottom -1px
+        opacity .8
+        letter-spacing 0
+        word-spacing .2em
 
+        b
+            font-style italic
+            font-weight bold
+            font-size 1.3em
+
+ui-slide.components-whats-new
+
+    h4
+        background $grayblue
+        bottom auto
+        top 0
+        left auto
+        right 0
+    div
+        position absolute
+        bottom 4%
+        right 71%
+
+    span
+        color #fff
+        border 0
+        display block
+        padding 1em 2em
+        margin-bottom .4em
+        text-transform uppercase
+
+        &:nth-child(1)
+            background $orange
+
+        &:nth-child(2)
+            background $grayblue
+
+        &:nth-child(3)
+            background $green
+
+        &:nth-child(4)
+            background $blue
+
+ui-slide.components-polymer
+    h4
+        background $blue
+        left auto
+        padding 1em 4em 1em 2em
+        right 0
+
+
+    iframe
+        position absolute
+        top 0
+        left 0
+        bottom 0
+        right 0
+        height 100%
+        width 100%
 
 
 
@@ -399,14 +475,16 @@ ui-slide.topics
         overflow visible
 
     ul
-        -webkit-align-items center
-        align-items center
+        -webkit-align-items stretch
+        align-items stretch
+        -webkit-align-content center
+        align-content center
         display -webkit-flex
         display flex
-        -webkit-flex-wrap nowrap
-        flex-direction row
+        -webkit-flex-wrap wrap
+        flex-wrap wrap
         -webkit-flex-direction row
-        flex-wrap nowrap
+        flex-direction row
         -webkit-justify-content center
         justify-content center
         list-style: none
@@ -414,17 +492,38 @@ ui-slide.topics
         padding 0
 
     li
-        float left
+        color #fff
+        font-size 1.5em
         margin 0
-        padding 10px
+        padding 2em
         text-align center
         transition opacity .6s
+        text-transform uppercase
+        -webkit-flex 1 auto
+        flex 1 0
+
+        &:nth-of-type(1)
+            background $orange
+
+        &:nth-of-type(2)
+            background $green
+
+
+        &:nth-of-type(3)
+            background $blue
+
+        &:nth-of-type(4)
+            background $grayblue
+            -webkit-flex 1 0 100%
+            flex: 1 0 100%
+
 
         &.faded
             opacity .4
 
         &.scale
             opacity 1
+            z-index 1
 
             &.ui-slide-item-current
                 opacity 1
@@ -434,8 +533,6 @@ ui-slide.topics
                 opacity 1
                 transform scale(1.25)
 
-    img
-        width 100%
 
     div
         width: 100%
