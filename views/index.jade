@@ -14,6 +14,9 @@ block content
                     p Senior Lead Consultant, Sungard
                     p Gotham JS 2013
 
+
+
+
         ui-slide.topics(backdrop="false", background="false", items=".items li", items-fx="fade", vcenter="true", notes=".notes li")
             article
                 ul.items
@@ -22,9 +25,16 @@ block content
                     li  Web Components
 
                 ul.notes
-                    li This talk isn't about implementation but theory and idea behind
-                    li three parts
+                    li This talk isn't about implementation but theory and idea behind responsive design, ress systems and web components.
+                        |  So I have broken this talk down into 3 parts.
+                        |  The first being responsive design, where we will go over how responsive design came from and how its changed over the past 3 years.
+                        |  Next, RESS systems an how responsive design can be implmented on the server, delivering unique experiences to devices.
+                        |  And finally web components, a new web standards allowing for the syndication of components.
                     li work in progress demo
+
+
+
+
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
@@ -32,6 +42,10 @@ block content
                     li.scale Responsive Design
                     li.faded RESS
                     li.faded Web Components
+
+
+
+
 
         ui-slide.responsive-design(notes=".notes li")
             hgroup
@@ -50,18 +64,17 @@ block content
                         |  to create a responsive, adaptive layout."
                     footer
                         p  - Ethan Marcotte
-
                 ul.notes
-                    li In 2010
-                    li Base on print paradigms
+                    li In 2010 Ethan Marcotte coined the term responsive design.
+                        |  He presented the idea that web had been limited by print paradigms and if you take a flexible layout with flexible images and you wrap media queries around it, you can deliver an experience tailored for a specific device resolution
 
 
 
 
-        ui-slide.responsive-now(items=".item, .item2, .item3")
+        ui-slide.responsive-now(items=".item, .item2, .item3", notes=".notes li")
             hgroup
                 h3 Responsive Design
-                    span.item2 NOW
+                    span NOW
             article
                 ul.list
                     li.item media queries
@@ -73,12 +86,20 @@ block content
                     li.item3.orange scalable typography
                     li.item3.orange content choreography
                     li.item3.orange feature detection
-                    li.item3.orange feature omission
+                    li.item3.orange feature polyfill &amp; omission
+                ul.notes
+                    li And over the last 3 years media queries, flexibles layouts and flexible images have changed web design and development.
+                    li  But now, we are starting to realize there is much much more.
+                    li  Flexible images were just a portion, we needed flexible video or flexible media for that matter.
+                    li  And then we realized typography needs to scale for better accessibility.
+                    li  And with that content order became important, do we really need the full navigation at the top on mobile?
+                    li  How about features? How can we tell if a device supports it? do we polyfill or omit?
                 footer
 
 
 
-        ui-slide(notes=".note", items=".item")
+
+        ui-slide(notes=".note", items=".item", notes=".notes li")
             hgroup
                 h3 Responsive Design
                     span IS HARD!
@@ -89,12 +110,19 @@ block content
                     li.item delays in browser implementation
                     li.item delays in standardization
                     li.item non-evergreen browsers
+                ul.notes
+                    li And the truth is that responsive design is difficult.  With new devices being invented everyday, we are working with endless browser/device matrix.
+                        |  An endless matrix that we have to pay for with development time and financially
+                        |  And within each of those devices might be browser missing the feature that you need, due to a lack of community standardization
+                        |  So do you support the feature, because after all most of you user base is on a legacy browser anyway.
                 footer
 
 
 
 
-        ui-slide.responsive-easier(items="li")
+
+
+        ui-slide.responsive-easier(items="li", notes=".notes li")
             hgroup
                 h3 Responsive Design
                     span IS GETTING EASIER!
@@ -104,14 +132,23 @@ block content
                         span  vh, vw, vmin, vmax
                     li flexbox
                     li grid layouts
+                    li css feature detection -
+                        span  @supports
                     li touch standardization
                     li advanced media queries -
                         span  pointer, luminosity
-                    li css feature detection -
-                        span  @supports
                     li new design paradigm -
                         span  offcanvas layouts
+                ul.notes
+                    li But its not all bad news, because we are still moving forward.
+                        |  It is getting easier, new features such as viewport unit allowing us to focus on viewport percentages instead of pixel based restrictions.  This text should be 30% of the window height, we can do that now.
+                        |  Flexbox, argueably the most powerful css layout feature is finally standardized and implemented
+                        |  Grid Layout the other side of the layout arguement, allowing for grid like arrangements of content
+                        |  CSS feature detection! A css style for detecting out what features are supported, allowing you to provide a inline implementation fallback.
+                        |  And lots more, including new design paradigms, which really isn't a new feature, but a new way of interacting.
+                        |  Breaking the mold of what web ui is, have you ever been asked to put a tooltip in a lightbox, or a lightbox in another lightbox. It just feels wrong
                 footer
+
 
 
 
@@ -126,13 +163,13 @@ block content
 
 
 
+
         ui-slide.responsive.ress(notes=".note")
             hgroup
                 h3 Responsive Design + Server-Side Components
                     span RESS
             article
                 img(data-src="images/mobile-first.png", title="Mobile First")
-
                 p
                     | "RESS combines
                     b  adaptive layouts
@@ -141,82 +178,144 @@ block content
                     |  optimization. So a single set of page templates define an entire site for all devices but key components have device specific implementations rendered server side.
                 p
                     span.quoter - Luke Wroblewski
-
                 p.note
                     | Base on print paradigms
 
 
 
 
-        ui-slide.ress-your-server(items="span")
+        ui-slide.ress-your-server(items="span", notes=".notes li")
             article
                 img.full(data-src="/images/your-server.jpg", alt="Your Server")
-
                 div
                     span Server
                     span Waffle Concierge
+                ul.notes
+                    li Lets assume Bob is our server, and he has clients.
+                    li Bob's job is to fullfill each of his clients requests
 
 
 
 
-        ui-slide.ress-similiar-requests(items="span")
+
+        ui-slide.ress-similiar-requests(items="span", notes=".notes li")
             article
                 img.full(data-src="/images/similiar-requests.jpg", alt="Similiar Requests")
                 h4
-                    | making
+                    | clients make
                     b  similiar
                     |  yet
                     b  unique
                     |  requests
-
                 span bacon
                     i  Waffle
-
                 span chilli
                     i Waffle
-
                 span chocolate
                     i Waffle
-
-                span Bananas
+                span banana
                     i Waffle
+                ul.notes
+                    li So his clients go ahead an make their requests
+                    li Each request being similiar, but not identical
 
 
 
-        ui-slide.ress-precious-cookies(notes=".note")
+
+        ui-slide.ress-found-profile(notes=".notes li")
             article
-                img.full(data-src="/images/precious-cookies.jpg", alt="Cookie Profile") h4
+                img.full(data-src="/images/found-profile.jpg", alt="Found Profile")
                 h4
-                    | with a
-                    b  cookie
-                    |  profile
+                    | server requests a
+                    b  profile
+                ul.notes
+                    li The server takes that request and attempts to match the client to a known profile, via cookie
 
-                p.note used to category and inventory browse/device functionality
 
-        ui-slide.ress-unique-devices(items="span")
+
+
+
+
+        ui-slide.ress-unique-devices(items="span", notes=".notes li")
             article
                 img.full(data-src="/images/unique-devices.jpg", alt="Unique Devices")
                 h4
-                    | create an
+                    | containing an
                     b  unique
                     |  identifier
-
                 div
                     span Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20100101 Firefox/23.0
                     span Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+                ul.notes
+                    li Looking within the profile for an unique identifier, the user agent
+                    li this smells familiar!
 
 
 
 
-        ui-slide.ress-not-what-it-seems(notes=".note")
+
+
+        ui-slide.ress-not-what-it-seems(notes=".notes li")
             article
                 img.full(data-src="/images/not-what-it-seems.jpg", alt="Not What It Seems")
                 div
                 p
                     span USER AGENT ?
                     | REALLY?
+                ul.notes
+                    li Not browser sniffing, but using it as an identifier for querying
+                    li its going to take the user agent and query a device database
 
-                p.note feature testing, not for browser sniffing
+
+
+        ui-slide.ress-sprinkle-magic(items="span",notes=".notes li")
+            article
+                img.full(data-src="/images/sprinkle-magic.jpg", alt="Sprinkle Magic")
+                h4
+                    | server applies its
+                    b  secret
+                    |  sauce
+                div
+                    span polyfill
+                    span feature adapt
+                    span bundle resources
+                    span cache
+                ul.notes
+                    li If a match is found, then the server can use the model to determine which features to polyfill, include or omit.
+                    li Determine which resources it should include, bundle and cache
+                    li Set a cookie
+                    li And fullfill the request
+
+
+
+
+
+        ui-slide.ress-new-profile(items="span", notes=".notes li")
+            article
+                img.full(data-src="/images/new-profile.jpg", alt="Profile Not Found")
+                h4
+                    | no
+                    b  profile?
+                    |  make one!
+                ul.notes
+                    li But if a profile can't be found, then the server must build one.
+                    li Defining a base profile that covers a basic experience
+
+
+
+
+
+        ui-slide.ress-send-sample(items="span", notes=".notes li")
+            article
+                img.full(data-src="/images/send-sample.jpg", alt="Send Sample")
+                h4
+                    | server sends a
+                    b  sample
+                ul.notes
+                    li The server sends a low level feature page
+                    li One time cost to a single client
+
+
 
 
 
@@ -224,20 +323,13 @@ block content
             article
                 img.full(data-src="/images/feature-testing.jpg", alt="Feature Testing")
                 h4
-                    | withe
+                    | with
                     b  feature
                     |  testing
-
-        ui-slide.ress-sprinkle-magic(items="span")
-            article
-                img.full(data-src="/images/sprinkle-magic.jpg", alt="Sprinkle Magic")
-                h4 sprinkle on the magic!
-
-                div
-                    span polyfill
-                    span feature adapt
-                    span bundle resources
-                    span cache
+                ul.notes
+                    li One time cost in the sense that once the device/browser has been feature tested
+                    li The results are returned to the server and cataloged for future requests from the same device
+                    li This is an iterative process until a device can be successfully mapped
 
 
         ui-slide.ress
@@ -245,7 +337,10 @@ block content
                 h3 RESS
                     span DEVICE PROFILE
             article
-                iframe(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
+                iframe.full(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
+
+
+
 
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
