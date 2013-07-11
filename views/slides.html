@@ -2,33 +2,48 @@
 <html>
     <head>
         <title>Slides Demo</title>
+        <link rel="stylesheet" href="/stylesheets/demo.css">
         <!-- http://localhost:3000 || http://devices.herokuapp.com -->
 
-        <link rel="import" href="http://localhost:3000/components/presentation/slides">
-        <link rel="import" href="http://localhost:3000/components/presentation/slide">
-        <script src="http://localhost:3000/javascripts/vendor/polymer-all/polymer/polymer.min.js"></script>
+        <!-- <link rel="import" href="http://localhost:3000/components/presentation/slides"> -->
+        <!-- <link rel="import" href="http://localhost:3000/components/presentation/slide"> -->
+        <!-- <script src="http://localhost:3000/javascripts/vendor/polymer-all/polymer/polymer.min.js"></script> -->
     </head>
     <body>
 
-    <ul-slides>
-        <ui-slide>
-            <hgroup>
-                <h2>My Slide Title</h2>
-            </hgroup>
-            <article>
-                My Slide content
-            </article>
-        </ui-slide>
+        <div class="slides">
 
-        <ui-slide>
-            <hgroup>
-                <h2>My Slide Title 2</h2>
-            </hgroup>
-            <article>
-                My Slide content
-            </article>
-        </ui-slide>
-    </ui-slides>
+            <div class="slide">
+                <hgroup>
+                    <h2>My Slide Title</h2>
+                </hgroup>
+                <article>
+                    <img src="/images/pixel.jpg" alt="Pixel Image"/>
+                    <p>
+                        Lorem ipsum Reprehenderit veniam ex ad quis dolore id veniam cupidatat ut ea adipisicing magna in consectetur ad velit nisi adipisicing consequat incididunt nostrud anim non culpa consectetur dolore.
+                    </p>
+                    <p>
+                        Lorem ipsum Amet ullamco officia commodo pariatur velit nulla mollit ex aliqua reprehenderit aliquip adipisicing dolore in labore nisi nostrud laborum dolor quis in magna non dolore et ullamco incididunt qui nulla officia Excepteur consectetur minim eu ullamco dolor exercitation in.
+                    </p>
+                </article>
+            </div>
+
+            <div class="slide">
+                <hgroup>
+                    <h2>My Slide Title 2</h2>
+                </hgroup>
+                <article>
+                    <img src="/images/pixel.jpg" alt="Pixel Image"/>
+                    <p>
+                        Lorem ipsum Amet ullamco officia commodo pariatur velit nulla mollit ex aliqua reprehenderit aliquip adipisicing dolore in labore nisi nostrud laborum dolor quis in magna non dolore et ullamco incididunt qui nulla officia Excepteur consectetur minim eu ullamco dolor exercitation in.
+                    </p>
+                    <p>
+                        Lorem ipsum Amet ullamco officia commodo pariatur velit nulla mollit ex aliqua reprehenderit aliquip adipisicing dolore in labore nisi nostrud laborum dolor quis in magna non dolore et ullamco incididunt qui nulla officia Excepteur consectetur minim eu ullamco dolor exercitation in.
+                    </p>
+                </article>
+            </div>
+
+        </div>
 
     </body>
 </html>
