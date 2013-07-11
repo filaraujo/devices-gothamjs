@@ -1,1 +1,10 @@
-include slides.html
+if (component.indexOf('slides-final') > -1)
+    include slides-final.html
+
+else if (component.indexOf('slides') > -1)
+    include slides.html
+
+else if (component.indexOf('offcanvas-final') > -1)
+    include offcanvas-final.html
+else
+    include offcanvas.html

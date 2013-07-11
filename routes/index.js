@@ -14,5 +14,9 @@ exports.index = function(req, res){
 
 
 exports.demo = function(req, res){
-    res.render('demo', {});
+    console.log(req.params)
+    res.render('demo', {
+        component: req.params,
+        test: true
+    });
 };

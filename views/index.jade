@@ -732,11 +732,12 @@ block content
                 footer.footer-tall
                     h3 HTML Imports
                         span Browser Support
+
                     ul.browsers
-                        li.icon-chrome.unsupported
-                        li.icon-safari.unsupported
-                        li.icon-opera.unsupported
                         li.icon-firefox.unsupported
+                        li.icon-safari.unsupported
+                        li.icon-chrome.unsupported
+                        li.icon-opera.unsupported
                         li.icon-IE.unsupported
 
 
@@ -764,6 +765,23 @@ block content
 
 
 
+
+        ui-slide.components(items=".browsers")
+            article
+                footer.footer-tall
+                    h3 WEB COMPONENTS
+                        span Polyfill Support
+                    ul.browsers
+                        li.icon-firefox
+                        li.icon-safari
+                        li.icon-chrome
+                        li.icon-opera
+                        li.icon-IE
+
+
+
+
+
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
@@ -771,8 +789,10 @@ block content
 
 
 
-        ui-slide
-            hgroup
-                h3 ....
+
+        ui-slide.title
             article
-                | thank you
+                div
+
+                    h1
+                        | Thank You
