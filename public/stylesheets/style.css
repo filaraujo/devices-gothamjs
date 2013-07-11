@@ -143,12 +143,13 @@ ui-slide.components-whats-new span:nth-child(4){background:#14b9d6}
 ui-slide.components-polymer h4{background:#14b9d6;left:auto;padding:1em 4em 1em 2em;right:0}
 ui-slide.components-polymer iframe{position:absolute;top:0;left:0;bottom:0;right:0;height:100%;width:100%}
 ui-slide.splash img{width:40%}
-ui-slide.title p{color:#fff;position:absolute;top:30%;left:70%;text-align:left;}
+ui-slide.title p{color:#fff;position:absolute;top:6%;left:104%;text-align:left;margin:0;width:28%;}
 ui-slide.title p span{display:block}
-ui-slide.title > div{background:#323a45;position:absolute;top:-1px;bottom:-1px;right:-1px;left:-1px;padding-right:32%;text-align:right}
-ui-slide.title h1{color:#fff;font-weight:bold;margin:30% 0 0 6%;text-transform:uppercase;line-height:1em;}
+ui-slide.title article{background:#323a45;position:absolute;padding:0;top:-1px;bottom:-1px;right:-1px;left:-1px;height:auto;text-align:right}
+ui-slide.title div{position:relative;margin-right:32%;margin-top:25%}
+ui-slide.title h1{color:#fff;font-weight:bold;margin:0 0 0 6%;text-transform:uppercase;line-height:1em;}
 ui-slide.title h1 span{color:#14b9d6;font-size:1.3em}
-ui-slide.title h2{font-size:1.25em;margin-top:.2em;margin-left:6%;text-transform:uppercase;}
+ui-slide.title h2{font-size:1.3em;margin-top:.2em;margin-left:6%;text-transform:uppercase;}
 ui-slide.title h2 span{display:block;font-size:1.4em}
 ui-slide.topics article{overflow:visible}
 ui-slide.topics ul{-webkit-align-items:stretch;-webkit-box-align:stretch;-moz-box-align:stretch;-o-box-align:stretch;-ms-box-align:stretch;-webkit-align-items:stretch;align-items:stretch;-webkit-align-content:center;-webkit-align-content:center;align-content:center;display:-webkit-flex;display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-flex-wrap:wrap;-webkit-box-lines:multiple;-moz-box-lines:multiple;-o-box-lines:multiple;-ms-box-lines:multiple;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;-o-box-orient:horizontal;-ms-box-orient:horizontal;-webkit-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-webkit-box-pack:center;-moz-box-pack:center;-o-box-pack:center;-ms-box-pack:center;-webkit-justify-content:center;justify-content:center;list-style:none;margin:0;padding:0}
