@@ -19,8 +19,8 @@ block content
                         span  Senior Lead Consultant
                         span  Sungard
             ul.notes
-                li Hello everyone, I'm Filipe Araujo
-                li And I work for Sungard, one of the sponsors of gothamjs
+                li Hello everyone, I'm Filipe Araujo and we are going to be talking about RessDriven WebPonents
+                li And I am Senior Lead Consultant for Sungard
                 li I've done alot of work in the media and financial space and I am currently consulting for Comcast
 
 
@@ -202,7 +202,7 @@ block content
                     span Waffle Concierge
                 ul.notes
                     li Lets assume Bob is our server, and he has clients
-                    li And Bob's job is to fullfill each of his clients requests, thats his business - how he makes him mney
+                    li And Bob's job is to fullfill each of his clients requests
 
 
 
@@ -241,7 +241,9 @@ block content
                     b  profile
                 ul.notes
                     //- li And every once in a while he remembers what the client likes
-                    li The server takes that request and attempts to match the client to a known profile, via cookie
+                    li The server takes that request and attempts to match the client to a known profile
+                    li Usually via a memory reference, a browser cookie
+                    li But if no reference, he looks elsewhere, a database
 
 
 
@@ -259,7 +261,7 @@ block content
                     span Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20100101 Firefox/23.0
                     span Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
                 ul.notes
-                    li Looking within the profile for an unique identifier, the user agent
+                    li Looking within the profile for an unique identifier, the user agent, a name
                     li this smells familiar!
 
 
@@ -358,6 +360,16 @@ block content
 
 
 
+        ui-slide.ress-request-fullfilled
+            article
+                img.full(data-src="/images/request-fullfilled.jpg", alt="Request Fullfilled")
+                h4
+                    b fullfilling
+                    |  the request
+
+
+
+
 
         ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
@@ -378,13 +390,12 @@ block content
                 h4 the new
                     b  building blocks
                     |  of the web
-
                 div
                     span HTML Templates
                     span Shadow DOM
                     span Custom Elements
                     span HTML Imports
-                p.notes test
+                div.notes comprised of 4 new features
 
 
 
@@ -406,10 +417,10 @@ block content
                         </template>
                 ul.list
                     li contents hidden from DOM
-                    li parsed; not rendered
-                    li scripts not run
+                    li media not played
                     li stylesheets and images not loaded
-                    li media is not played
+                    li scripts not run
+                    li can contain shadow dom
                 ui.notes
                     li So this is what a html template looks like, very simple.
                     li It can be placed anywhere in the content head, body, tables even nested in selects
@@ -422,7 +433,7 @@ block content
 
 
 
-        ui-slide.components(notes=".notes li", items=".item, .browsers")
+        ui-slide.components(notes=".notes li", items=".item", notes=".notes li")
             hgroup
                 h3 Web Components
                     span HTML TEMPLATES
@@ -443,13 +454,18 @@ block content
                             content.querySelector('source').src = "newDemo.mp4";
 
                             document.body.appendChild(content.cloneNode(true));
+                ul.notes
+                    li query the template
+                    li make modifications
+                    li append it
+                    li becomes live
 
 
 
 
 
 
-        ui-slide.components(notes=".notes li", items=".browsers")
+        ui-slide.components(items=".browsers")
             article
                 footer.footer-tall
                     h3 HTML Templates
@@ -471,7 +487,7 @@ block content
 
 
 
-        ui-slide.components-shadow-dom(items=".item, .list li")
+        ui-slide.components-shadow-dom(items=".item, .list li", notes=".notes li")
             hgroup
                 h3 Web Components
                     span SHADOW DOM
@@ -495,6 +511,11 @@ block content
                     li hidden DOM can not be accessed from outside javascript
                     li can be styled by @host css and pseudo selectors
                     li insertion points
+                ul.notes
+                    li we have been secretly exposed to this
+                    li allows to encapsulate styles and markup
+                    li can still be styled via host and specialized pseudo selectors
+                    li and even allows for content arrangement
 
 
 
@@ -502,7 +523,7 @@ block content
 
 
 
-        ui-slide.components-shadow-dom(items="div, .browsers")
+        ui-slide.components-shadow-dom(items="div")
             hgroup
                 h3 Web Components
                     span SHADOW DOM
@@ -513,7 +534,7 @@ block content
                             <h1>Heading</h1>
                         </div>
                 div
-                    ui-code(type="jav", title="javascript")
+                    ui-code(type="javascript", title="javascript")
                         :code
                             var host = document.querySelector('#host'),
                                 shadow = host.createShadowRoot(), // prefixed
@@ -529,12 +550,14 @@ block content
                                 #document-fragment
                                     <p>paragraph content</p>
                             </div>
+                span.note much more to the spec, recommend reading Eric Bidelmans talk over at htmlrocks.com
 
 
 
 
 
-        ui-slide.components(notes=".notes li", items=".browsers")
+
+        ui-slide.components(items=".browsers")
             article
                 footer.footer-tall
                     h3 Shadow DOM
@@ -576,15 +599,19 @@ block content
                                 </script>
                             </element>
                 ul.list
-                    li lifecycle callbacks
                     li can extend other elements
+                    li lifecycle callbacks
+                ul.notes
+                    li custom element is an developer created html element that inherits from other core html elements
+                    li it contains events/api which are fired throughout its lifecycle
+                    li and its prototype can be extended with more methods and apis
 
 
 
 
 
 
-        ui-slide.components(items="div, .browsers")
+        ui-slide.components(items="div", notes=".notes li")
             hgroup
                 h3 Web Components
                     span CUSTOM ELEMENTS
@@ -595,7 +622,10 @@ block content
                         <element name="foo" constructor="Foo">
                             <script>
                                 this.register({
-                                    prototype: { ... }
+                                    prototype: {
+                                        readyCallback: function() { ... },
+                                        more: function() { ... }
+                                    }
                                 });
                             </script>
                         </element>
@@ -613,12 +643,16 @@ block content
                         :code
                             var foo = new Foo();
                             document.body.appendChild(foo);
+                ul.notes
+                    li can be created as an element
+                    li with document.createElement
+                    li or with constructor
 
 
 
 
 
-        ui-slide.components(notes=".notes li", items=".browsers")
+        ui-slide.components(items=".browsers")
             article
                 footer.footer-tall
                     h3 Custom Elements
@@ -635,7 +669,7 @@ block content
 
 
 
-        ui-slide.components(notes=".notes li", items="div, .browsers")
+        ui-slide.components(notes=".notes li", items="div")
             hgroup
                 h3 Web Components
                     span HTML IMPORTS
@@ -651,6 +685,9 @@ block content
                                 <foo></foo> <!-- element definition loaded from foo.html-->
                             </body>
                         </html>
+                ul.notes
+                    li allows us to include and reuse html documents within our html documents
+                    li can be used with custom elements
 
 
 
@@ -658,7 +695,7 @@ block content
 
 
 
-        ui-slide.components(notes=".notes li", items="div, .browsers")
+        ui-slide.components(notes=".notes li", items="div")
             hgroup
                 h3 Web Components
                     span HTML IMPORTS
@@ -684,11 +721,13 @@ block content
                                     });
                                 </script>
                             </element>
+                ul.notes
+                    li can even nest imports
 
 
 
 
-         ui-slide.components(notes=".notes li", items=".browsers")
+         ui-slide.components(items=".browsers")
             article
                 footer.footer-tall
                     h3 HTML Imports
