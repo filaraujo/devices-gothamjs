@@ -28,15 +28,14 @@ h6
 
 h1
     color $grayblue
-    // font-size 5rem
-    font-size: 300%
+    font-size 5.25em
     font-weight normal
     line-height 1.4
     letter-spacing -.2rem
 
 h2
     color: #5e6d81
-    // font-size 2.8rem
+    font-size 3em
     font-weight normal
     // letter-spacing -.1em
 
@@ -61,10 +60,26 @@ article
         background #424953
         bottom -1px
         height 8vmin
-        left 0
+        left -1px
         opacity .9
         position absolute
-        right 0
+        right -1px
+
+        &.footer-tall
+            height 50%
+
+        h3
+            position absolute
+            bottom 1em
+            left 1em
+            font-size 2em
+            color #fff
+            text-transform uppercase
+
+            span
+                color #aaa !important
+                font-size .66em
+                margin-left .4em
 
     iframe
         border 0
@@ -121,21 +136,26 @@ ul
 
         li
             display inline-block
-            font-size 5em
+            font-size 8.5em
             position relative
-            margin 0 .1em
+            margin 0 .15em
             top -.5em
 
             &.unsupported:before
-                opacity .2
+                opacity .3
 
         span
             font-weight bold
-            font-size .25em
+            font-size .2em
             position absolute
-            right 0
             bottom -.33em
             right -.33em
+
+            &.icon-mobile
+                bottom auto
+                color #666
+                right -.75em
+                top 0
 
 
 
@@ -345,7 +365,7 @@ ui-slide.ress-not-what-it-seems
             font-weight bold
             letter-spacing -3px
             text-align left
-            word-break word-break
+            word-break break-all
 
 
 ui-slide.ress-your-server
@@ -480,11 +500,46 @@ ui-slide.splash
 // title slide
 ui-slide.title
     p
-        color #797979
-        line-height 1vmin
-    div
-        font-size 1.3rem
-        margin-top 8vmin
+        color #fff
+        position absolute
+        top 30%
+        left 70%
+        text-align left
+
+        span
+            display block
+
+    > div
+        background $grayblue
+        position absolute
+        top -1px
+        bottom -1px
+        right -1px
+        left -1px
+        padding-right 32%
+        text-align right
+
+    h1
+        color #fff
+        font-weight bold
+        margin 30% 0 0 6%
+        text-transform: uppercase
+        line-height 1em
+
+        span
+            color $blue
+            font-size 1.3em
+
+    h2
+        font-size 1.25em
+        margin-top .2em
+        margin-left 6%
+        text-transform uppercase
+
+        span
+            display block
+            font-size 1.4em
+
 
 // topic slides
 ui-slide.topics
@@ -535,11 +590,13 @@ ui-slide.topics
             flex: 1 0 100%
 
 
+        &.finale
+            background $grayblue
         &.faded
             opacity .4
 
         &.scale
-            opacity 1
+            opacity 1 !important
             z-index 1
 
             &.ui-slide-item-current

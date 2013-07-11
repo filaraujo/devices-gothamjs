@@ -11,3 +11,8 @@ exports.index = function(req, res){
         componentsHost: componentsHost
     });
 };
+
+
+exports.demo = function(req, res){
+    res.render('demo', {});
+};

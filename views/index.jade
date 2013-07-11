@@ -2,17 +2,27 @@ extends layout
 
 block content
     ui-slides
+
+
+
         ui-slide.splash(vcenter="true", center="true")
             img(data-src="http://placehold.it/383x92")
 
+
+
+
         ui-slide.title
-            hgroup
-                h1 RessDriven WebPonents
-                h2 Responsive Web Design + Server Side Web Components
-                div
-                    p Filipe Araujo
-                    p Senior Lead Consultant, Sungard
-                    p Gotham JS 2013
+            div
+                h1
+                    | RessDriven
+                    span  WebPonents
+                h2
+                    | responsive design + server
+                    | side components + web components
+                p
+                    | Filipe Araujo
+                    span  Senior Lead Consultant
+                    span  Sungard
 
 
 
@@ -122,7 +132,7 @@ block content
 
 
 
-        ui-slide.responsive-easier(items="li", notes=".notes li")
+        ui-slide.responsive-easier(items=".list li", notes=".notes li")
             hgroup
                 h3 Responsive Design
                     span IS GETTING EASIER!
@@ -270,6 +280,8 @@ block content
 
 
 
+
+
         ui-slide.ress-sprinkle-magic(items="span",notes=".notes li")
             article
                 img.full(data-src="/images/sprinkle-magic.jpg", alt="Sprinkle Magic")
@@ -333,12 +345,15 @@ block content
                     li This is an iterative process until a device can be successfully mapped
 
 
+
+
         ui-slide.ress
             hgroup
                 h3 RESS
                     span DEVICE PROFILE
             article
                 iframe.full(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
+
 
 
 
@@ -352,6 +367,11 @@ block content
                     li.faded RESS
                     li.scale Web Components
 
+
+
+
+
+
         ui-slide.components-whats-new(items="span", notes=".notes")
             article
                 img.full(data-src="/images/whats-new.jpg", alt="What's New")
@@ -364,10 +384,14 @@ block content
                     span Shadow DOM
                     span Custom Elements
                     span HTML Imports
-
                 p.notes test
 
-        ui-slide.components(items=".list li")
+
+
+
+
+
+        ui-slide.components(items=".list li", notes=".notes li")
             hgroup
                 h3 Web Components
                     span HTML TEMPLATES
@@ -381,11 +405,21 @@ block content
                             <div class="comment"></div>
                         </template>
                 ul.list
-                    li hidden from DOM, can not be traversed
+                    li contents hidden from DOM
                     li parsed; not rendered
                     li scripts not run
                     li stylesheets and images not loaded
                     li media is not played
+                ui.notes
+                    li So this is what a html template looks like, very simple.
+                    li It can be placed anywhere in the content head, body, tables even nested in selects
+                    li Child nodes of template tags are hidden from DOM can not be traversed
+                    li video won't play, images won't loaded, scripts won't run until activated
+                    li templates can even have their own shadow dom
+
+
+
+
 
 
         ui-slide.components(notes=".notes li", items=".item, .browsers")
@@ -401,7 +435,6 @@ block content
                             </video>
                             <div class="comment"></div>
                         </template>
-
                 div.item
                     ui-code(title="javascript")
                         :code
@@ -411,18 +444,32 @@ block content
 
                             document.body.appendChild(content.cloneNode(true));
 
-                ul.notes
-                    li once a template is cloned, it becomes live
 
-                footer
+
+
+
+
+        ui-slide.components(notes=".notes li", items=".browsers")
+            article
+                footer.footer-tall
+                    h3 HTML Templates
+                        span Browser Support
                     ul.browsers
                         li.icon-firefox
                             span 22
-                        li.icon-safari
+                            span.icon-mobile
+                        li.icon-safari.unsupported
                         li.icon-chrome
+                            span.icon-mobile
                         li.icon-opera
                             span 15
+                            span.icon-mobile
                         li.icon-IE.unsupported
+
+
+
+
+
 
         ui-slide.components-shadow-dom(items=".item, .list li")
             hgroup
@@ -446,8 +493,14 @@ block content
                             </input>
                 ul.list
                     li hidden DOM can not be accessed from outside javascript
-                    li can be styled by host css via pseudo selectors
+                    li can be styled by @host css and pseudo selectors
                     li insertion points
+
+
+
+
+
+
 
         ui-slide.components-shadow-dom(items="div, .browsers")
             hgroup
@@ -459,7 +512,6 @@ block content
                         <div id="host">
                             <h1>Heading</h1>
                         </div>
-
                 div
                     ui-code(type="jav", title="javascript")
                         :code
@@ -478,14 +530,28 @@ block content
                                     <p>paragraph content</p>
                             </div>
 
-                footer
+
+
+
+
+        ui-slide.components(notes=".notes li", items=".browsers")
+            article
+                footer.footer-tall
+                    h3 Shadow DOM
+                        span Browser Support
                     ul.browsers
                         li.icon-firefox.unsupported
                         li.icon-safari.unsupported
                         li.icon-chrome
+                            span.icon-mobile
                         li.icon-opera
                             span 15
+                            span.icon-mobile
                         li.icon-IE.unsupported
+
+
+
+
 
         ui-slide.components(items=".list li", notes=".notes li")
             hgroup
@@ -509,13 +575,14 @@ block content
                                     });
                                 </script>
                             </element>
-
                 ul.list
                     li lifecycle callbacks
                     li can extend other elements
 
-                ui.notes
-                    li developers have been using custom elements for years
+
+
+
+
 
         ui-slide.components(items="div, .browsers")
             hgroup
@@ -532,26 +599,30 @@ block content
                                 });
                             </script>
                         </element>
-
-
                 div
                     ui-code(title="html")
                         :code
                             <foo></foo>
-
                 div
                     ui-code(title="javascript")
                         :code
                             var foo = document.createElement('foo');
                             foo.more(); // more method is executed
-
                 div
                     ui-code(title="javascript")
                         :code
                             var foo = new Foo();
                             document.body.appendChild(foo);
 
-                footer
+
+
+
+
+        ui-slide.components(notes=".notes li", items=".browsers")
+            article
+                footer.footer-tall
+                    h3 Custom Elements
+                        span Browser Support
                     ul.browsers
                         li.icon-firefox
                         li.icon-safari.unsupported
@@ -559,6 +630,10 @@ block content
                         li.icon-opera
                             span 15
                         li.icon-IE.unsupported
+
+
+
+
 
         ui-slide.components(notes=".notes li", items="div, .browsers")
             hgroup
@@ -578,6 +653,11 @@ block content
                         </html>
 
 
+
+
+
+
+
         ui-slide.components(notes=".notes li", items="div, .browsers")
             hgroup
                 h3 Web Components
@@ -587,7 +667,6 @@ block content
                     :code
                         <link rel="import" href="foo.html">
                         <foo></foo> <!-- element definition loaded from foo.html-->
-
                 div
                     ui-code(title="foo.html")
                         :code
@@ -606,7 +685,14 @@ block content
                                 </script>
                             </element>
 
-                footer
+
+
+
+         ui-slide.components(notes=".notes li", items=".browsers")
+            article
+                footer.footer-tall
+                    h3 HTML Imports
+                        span Browser Support
                     ul.browsers
                         li.icon-chrome.unsupported
                         li.icon-safari.unsupported
@@ -615,38 +701,36 @@ block content
                         li.icon-IE.unsupported
 
 
-        ui-slide.components-implement
+
+
+        ui-slide.components-implement(notes=".notes li")
             article
                 img.full(data-src="/images/implement.jpg", alt="Limited Support")
-                h4 very limited support!
+                h4
+                    | very
+                    b  limited
+                    |  browser support!
+                ul.notes
+                    li So with such limited support why should we even bother implementing?
 
 
-        ui-slide.components-polymer
+
+
+        ui-slide.components-polymer(notes=".notes li")
             article
                 iframe(data-src="http://www.polymer-project.org/", width="100%", height="100%")
                 h4 web components polyfills + other goodies
 
-        ui-slide.topics(backdrop="false", background="false", items="li.scale")
+
+
+
+
+        ui-slide.topics(backdrop="false", background="false", items="li.scale", vcenter="true")
             article
                 ul
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Responsive Design
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span RESS
-                    li.faded
-                        img(data-src="http://placehold.it/200x200")
-                        span Web Components
-                    li.scale
-                        img(data-src="http://placehold.it/200x200")
-                        span Now what?
+                    li.finale Demos
 
-        ui-slide
-            hgroup
-                h3 ....
-            article
-                | contents
+
 
         ui-slide
             hgroup
