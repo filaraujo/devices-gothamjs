@@ -354,7 +354,7 @@ block content
                 h3 RESS
                     span DEVICE PROFILE
             article
-                iframe.full(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
+                iframe.full(data-src=componentsHost+"/device", width="100%", height="100%")
 
 
 
@@ -420,7 +420,6 @@ block content
                     li media not played
                     li stylesheets and images not loaded
                     li scripts not run
-                    li can contain shadow dom
                 ui.notes
                     li So this is what a html template looks like, very simple.
                     li It can be placed anywhere in the content head, body, tables even nested in selects
@@ -756,7 +755,7 @@ block content
 
         ui-slide.components-polymer(notes=".notes li")
             article
-                iframe(data-src="http://www.polymer-project.org/", width="100%", height="100%")
+                img.full(data-src="/images/polymer.png", alt="Polymer Project")
                 h4 web components polyfills + other goodies
 
 
@@ -791,20 +790,29 @@ block content
 
 
 
+
+        ui-slide.demo
+            article
+                iframe(data-src="http://localhost:3001/demo/slides", width="100%", height="100%")
+
+
+
+
+
+        ui-slide.demo(notes=".notes li")
+            article
+                iframe(data-src="http://localhost:3001/demo/slides-final", width="100%", height="100%")
+
+
+
+
+
         ui-slide.ress
             hgroup
                 h3 RESS
                     span DEVICE PROFILE
             article
-                iframe.full(data-src="http://devices.herokuapp.com/device", width="100%", height="100%")
-
-
-
-
-
-        ui-slide.demo
-            article
-                iframe(data-src="http://localhost:3001/demo/slides", width="100%", height="100%")
+                iframe.full(data-src=componentsHost+"/device", width="100%", height="100%")
 
 
 
