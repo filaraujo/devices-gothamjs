@@ -62,7 +62,6 @@ block content
                 h3 Responsive Design
                     span 2010
             article
-                img(data-src="images/responsive-web.png", title="Responsive Web")
                 blockquote
                     p
                         | "
@@ -74,6 +73,8 @@ block content
                         |  to create a responsive, adaptive layout."
                     footer
                         p  - Ethan Marcotte
+                footer.footer-tall
+                    img(data-src="images/responsive-web.png", title="Responsive Web")
                 ul.notes
                     li In 2010 Ethan Marcotte coined the term responsive design.
                         |  He presented the idea that web had been limited by print paradigms and if you take a flexible layout with flexible images and you wrap media queries around it, you can deliver an experience tailored for a specific device resolution
@@ -523,7 +524,7 @@ block content
 
 
 
-        ui-slide.components-shadow-dom(items="div")
+        ui-slide.components-shadow-dom(items="div", notes=".note")
             hgroup
                 h3 Web Components
                     span SHADOW DOM
@@ -588,9 +589,7 @@ block content
                                 <script>
                                     this.register({
                                         prototype: {
-                                            readyCallback: function() {
-                                                console.log('foo ready');
-                                            },
+                                            readyCallback: function() { ...  },
                                             more: function(){
                                                 console.log('more foo');
                                             }
@@ -687,7 +686,7 @@ block content
                         </html>
                 ul.notes
                     li allows us to include and reuse html documents within our html documents
-                    li can be used with custom elements
+                    li can be used with custom elements, shadow and templates
 
 
 
@@ -770,7 +769,7 @@ block content
             article
                 footer.footer-tall
                     h3 WEB COMPONENTS
-                        span Polyfill Support
+                        span Browser Polyfill Support
                     ul.browsers
                         li.icon-firefox
                         li.icon-safari
