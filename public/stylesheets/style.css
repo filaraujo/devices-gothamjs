@@ -95,6 +95,7 @@ ul.browsers li.unsupported:before{opacity:.3;filter:alpha(opacity=30);-ms-filter
 ul.browsers span{font-weight:bold;font-size:.2em;position:absolute;bottom:-.33em;right:-.33em;}
 ul.browsers span.icon-mobile{bottom:auto;color:#666;right:-.75em;top:0}
 ui-slide.thank-you article{background:#323a45;position:absolute;padding:0;top:-3px;bottom:-3px;right:-3px;left:-3px;height:auto !important;text-align:center}
+ui-slide.thank-you img{position:absolute;bottom:8%;left:42%;width:100px}
 ui-slide.thank-you div{position:relative;margin-top:22%}
 ui-slide.thank-you h1{color:#fff;font-weight:bold;font-size:10em;margin:0;text-transform:uppercase;line-height:1em}
 ui-slide.thank-you h2{color:#14b9d6;text-transform:uppercase}
@@ -103,7 +104,8 @@ ui-slide.thank-you ul li{display:inline;font-size:2em;color:#fff;margin:1em 1.2e
 ui-slide.thank-you ul li:before{font-size:2em;margin-right:.2em;vertical-align:middle}
 ui-slide.thank-you ul li span{position:absolute;text-transform:uppercase;right:0;top:130%;color:#14b9d6;font-size:.75em;font-weight:bold}
 ui-slide.title p{color:#fff;font-size:1.8em;position:absolute;top:3%;left:104%;text-align:left;margin:0;width:28%;}
-ui-slide.title p span{display:block;font-size:.7em;color:#14b9d6}
+ui-slide.title p span{display:block;font-size:.7em}
+ui-slide.title img{width:90px}
 ui-slide.title article{background:#323a45;position:absolute;padding:0;top:-3px;bottom:-3px;right:-3px;left:-3px;height:auto !important;text-align:right}
 ui-slide.title div{position:relative;margin-right:32%;margin-top:22%}
 ui-slide.title h1{color:#fff;font-weight:bold;margin:0 0 0 6%;text-transform:uppercase;line-height:1em;}
